@@ -1,5 +1,6 @@
 # AdventureWorks_Analysis-Azure-Data-Engineering
 Data Engineering Project - Analyze Microsoft's Adventures Work data from End to End
+# Azure End-to-End Data Engineering Project using AdventureWorks Data
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -22,76 +23,86 @@ This project demonstrates an end-to-end data pipeline implementation using Micro
 - Conducting analytics using Azure Synapse Analytics
 - Visualizing insights using Power BI
 
-### Image 1: On-Premise Data
-- Shows the original data stored in on-premise storage.
-- **Image 1.1:** Displays the contents of the on-premise data.
+The project starts with the on-premise data, as shown in `on premise data`, where the dataset exists in local storage. The contents of the dataset can be seen in `contents of the on premise data`.
+[on premise data](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/1.on%20premise%20data.jpg)  
+[contents of the on premise data](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/1.1.contents%20of%20on%20premise%20data.jpg)  
 
 ---
 ## Project Architecture
-
-### Image 2: Resource Group
-- The necessary resources are created under the Resource Group: **"harsha-Data_Engineering-Project"**.
-- This includes:
+[Project Architecture](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/architectur.png)  
+The necessary resources are created under the Resource Group: **"harsha-Data_Engineering-Project"**. This includes:
   - Azure Data Factory (ADF)
   - Azure Databricks
   - Azure Data Lake Storage (ADLS)
   - Azure Key Vault
   - Azure Synapse Analytics
 
-### Image 3: SHIR to On-Premise Connection
-- **Image 3.1:** Shows the steps to connect Self-Hosted Integration Runtime (SHIR) with on-premise data.
+The setup of these resources is illustrated in `resource group`.
 
+[resource group](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/2.resource%20group.jpg)  
+A Self-Hosted Integration Runtime (SHIR) is used to establish a connection between the on-premise data source and Azure services. The connection process is detailed in `SHIR to on Premise`, which includes steps depicted in `contains 3 images`.
+
+[SHIR to on Premise](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/3.SHIR%20to%20on%20premise.jpg)  
+[SHIR to on Premise_1](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/3.1.SHIR%20to%20on%20premise.jpg)  
+[SHIR to on Premise_2](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/3.2.SHIR%20to%20on%20premise.jpg)  
 ---
 ## Data Storage Strategy
 
-### Image 4: Storage Medallion
-- ADLS follows a **Medallion Architecture**:
+ADLS follows a **Medallion Architecture**, as depicted in `Storage Medallion`. This architecture consists of three storage layers:
   - **Bronze Layer:** Stores raw source data (CSV format)
   - **Silver Layer:** Stores cleansed and structured data (Parquet format)
   - **Gold Layer:** Stores analytics-ready, aggregated data (Parquet format)
 
+[Storage Medallion](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/4.storage%20medalion.jpg)  
 ---
 ## Data Ingestion
 
-### Image 5: Data Ingestion from On-Prem to ADF
-- AdventureWorks data is imported into the **bronze container** in ADLS using ADF after configuring SHIR.
+AdventureWorks data is imported into the **bronze container** in ADLS using ADF after configuring SHIR. The ingestion process is demonstrated in `data ingestion from on prem to adf`.
 
-### Image 6: Data Ingested to ADLS in Bronze Container
-- **Image 6.1:** Shows the ingested CSV files stored in the bronze container.
+[data ingestion from on prem to adf](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/5.data%20ingestion%20from%20on%20prem%20to%20adf.jpg) 
+[data ingestion pipeline from on prem to adf](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/5.data%20ingestion%20pipeline%20from%20on%20prem%20to%20adf.jpg)  
+Once ingested, the data resides in ADLS under the bronze container, as seen in `data ingested to adls in bronze container`, with further details in `contains 2 images`.
+
+[data ingested to adls in bronze container](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/6.data%20ingested%20to%20adls%20in%20broze%20container.jpg) 
+[data ingested to adls in bronze container](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/6.1.data%20ingested%20to%20adls%20in%20broze%20container.jpg)  
 
 ---
 ## Data Transformation
 
-### Image 7: Data Transformation from Bronze to Silver
-- **Image 7.1:** Shows the transformation of data from bronze (CSV) to silver (Parquet) using Azure Databricks.
+The data is transformed from bronze (CSV) to silver (Parquet) using Azure Databricks, as shown in `data transformation from bronze to silver`. The transformation steps are depicted in `contains 2 images`.
 
-### Image 8: Data Transformation from Silver to Gold
-- **Image 8.1:** Shows the transformation of data from silver (Parquet) to gold (Parquet), optimizing it for analytics.
+[data transformation from bronze to silver](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/7.data%20transformation%20from%20bronze%20to%20silver.jpg)  
+[data transformation from bronze to silver](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/7.1.data%20transformation%20from%20bronze%20to%20silver.jpg)  
+Further transformation occurs from silver (Parquet) to gold (Parquet) to optimize it for analytics, as detailed in `data transformation from silver to gold`, with additional visuals in `contains 2 images`.
 
-### Image 9: Transformation Pipeline
-- A pipeline named **"Transformation Pipeline"** automates the process of moving and transforming data between these layers.
+[data transformation from silver to gold](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/8.data%20transformation%20from%20silver%20to%20%20gold.jpg)  
+[data transformation from silver to gold](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/8.1.data%20transformation%20from%20silver%20to%20%20gold.jpg)  
+To automate this entire process, a dedicated **Transformation Pipeline** is created in ADF, as shown in `transformation pipeline`.
+
+[transformation pipeline](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/9.transformation%20pipeline.jpg)  
 
 ---
 ## Data Analytics
 
-### Image 10: Synapse Analytics Pipeline
-- A **"Synapse Analytics Pipeline"** is created to analyze the transformed data in the gold layer.
-- **Image 10.1:** Shows the SQL script used to create views of all tables in the **GoldDB**.
+A **Synapse Analytics Pipeline** is built to perform analytics on the transformed data stored in the gold layer. The implementation of this pipeline is detailed in `synapse analytics pipeline`. The SQL script used to create views of all tables for **GoldDB** is captured in `Script to create view of all tables for goldDB`.
+
+[synapse analytics pipeline](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/10.synapse%20analytics%20pipeline.jpg)  
+[Script to create view of all tables for goldDB](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/10.1.script%20to%20create%20view%20of%20all%20tables%20for%20gold_DB.jpg)  
 
 ---
 ## Data Visualization
 
-### Image 11: Data Imported to Power BI
-- The processed data from **GoldDB** is imported into Power BI for reporting.
+The processed data from **GoldDB** is imported into Power BI for reporting, as shown in `data imported to powerbi`.
 
-### Image 12: Power BI Report Generated
-- Power BI dashboards are created using the cleaned and aggregated data from Azure Synapse Analytics.
+[data imported to powerbi](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/11.data%20imported%20to%20powerbi.jpg)  
+Power BI dashboards are then generated using the cleaned and aggregated data from Azure Synapse Analytics, as illustrated in `power bi report generated`.
+
+[power bi report generated](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/12.powerbi%20report%20genrated.jpg)  
 
 ---
 ## Security & Authentication
-- All sensitive information, including authentication keys, is securely stored in **Azure Key Vault** to manage access and credentials.
+All sensitive information, including authentication keys, is securely stored in **Azure Key Vault** to manage access and credentials.
 
 ---
 ## Conclusion
 This project successfully demonstrates an end-to-end data engineering workflow in Azure. It covers data ingestion, transformation, storage, analytics, and visualization, leveraging Azure's robust cloud capabilities. By following a structured medallion architecture and integrating Azure services efficiently, this project provides a scalable and secure data pipeline for enterprise use cases.
-
