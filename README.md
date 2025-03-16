@@ -1,6 +1,6 @@
-# AdventureWorks_Analysis-Azure-Data-Engineering
-Data Engineering Project - Analyze Microsoft's Adventures Work data from End to End
 # Azure End-to-End Data Engineering Project using AdventureWorks Data
+Data Engineering Project - Analyze Microsoft's Adventures Work data from End to End
+
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -45,6 +45,7 @@ A Self-Hosted Integration Runtime (SHIR) is used to establish a connection betwe
 [SHIR to on Premise](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/3.SHIR%20to%20on%20premise.jpg)  
 [SHIR to on Premise_1](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/3.1.SHIR%20to%20on%20premise.jpg)  
 [SHIR to on Premise_2](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/3.2.SHIR%20to%20on%20premise.jpg)  
+
 ---
 ## Data Storage Strategy
 
@@ -54,6 +55,7 @@ ADLS follows a **Medallion Architecture**, as depicted in `Storage Medallion`. T
   - **Gold Layer:** Stores analytics-ready, aggregated data (Parquet format)
 
 [Storage Medallion](https://github.com/Harshavardhan71/AdventureWorks_Analysis-Azure-Data-Engineering/blob/main/ss%20of%20project/4.storage%20medalion.jpg)  
+
 ---
 ## Data Ingestion
 
