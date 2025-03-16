@@ -1,6 +1,4 @@
 # Azure End-to-End Data Engineering Project using AdventureWorks Data
-Data Engineering Project - Analyze Microsoft's Adventures Work data from End to End
-
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
